@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 40px; color: orange">Портфолио</h1>
+
+Ильинский Максим
+<br>
+<br>
+<br>
+
+<p style="text-align: center; font-size: 30px; color: orange"><b>Почта</b></p>
+<p style="text-align:center; font-size:20px"> ilinskii.translates@gmail.com</p>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Игра [Breathedge](https://store.steampowered.com/app/738520/Breathedge/)
+<p style="text-align:left; font-size:15px; color: orange">(Оранжевый текст в названии выше — нажимабельная ссылка на игру 😊 )</p>
+
+<br>
+
+<img src="https://cdn.akamai.steamstatic.com/steam/apps/738520/header.jpg?t=1660146150" alt="|600" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: left; font-size: 60px; color: orange">Что делаю?</h1>
+<br>
+
+<h2 style="text-align: left; font-size: 30px; color: orange">Локализация:</h2>
+
+<style>
+	.bullet {
+		font-size: 16px;
+		padding: 5px;
+	}
+</style>
+
+- Перевожу (RU > EN) <!-- .element: class="bullet" -->
+- Редактирую (EN) <!-- .element: class="bullet" -->
+- Занимаюсь менеджментом локализации (8 из 11 языков): <!-- .element: class="bullet" -->
+	- Английский  <!-- .element: class="bullet" -->
+	- Французский <!-- .element: class="bullet" -->
+	- Немецкий<!-- .element: class="bullet" -->
+	- Китайский (Упрощённый)<!-- .element: class="bullet" -->
+	- Польский<!-- .element: class="bullet" -->
+	- Португальский (Бразильский вар.) <!-- .element: class="bullet" -->
+	- Испанский (LATAM)<!-- .element: class="bullet" -->
+	- Турецкий <!-- .element: class="bullet" -->
+- Поскольку это инди-проект, приходится самому тестировать локализации <!-- .element: class="bullet" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h2 style="text-align:center;  font-size:30px; color: orange"><b>Озвучение:</b></h2>
+
+
+<style>
+	.bullet2 {
+		font-size: 30px;
+		padding: 10px;
+	}
+
+</style>
+- Провожу кастинг актёров на озвучение (EN) <!-- .element: class="bullet2" -->
+- Режиссирую озвучение <!-- .element: class="bullet2" -->
+- За некоторыми актёрами чищу звук в Adobe Audition 😊 <!-- .element: class="bullet2" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 80px; color: orange">ПРИМЕРЫ ПЕРЕВОДОВ</h1>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style>
+	.bredge {
+		font-size: 16px;
+		padding-left: 170px;
+		padding-right: 150px;
+	}
+
+</style>
+
+<h1 style="text-align: center; font-size: 60px; color: orange">RU</h1>
+
+<img src="https://i.imgur.com/3z4m5O5.png" alt="|600" style="width: 600px; object-fit: fill">
+
+Редкое издание физики в нескольких томах. Говорят тот, кто прочтет все 50 книг, станет человеком, прочитавшим все эти книги. <!-- .element: class="bredge" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">EN</h1>
+
+<img src="https://i.imgur.com/20ZhIbZ.png" alt="|600" style="width: 600px; object-fit: fill">
+
+A rare edition of Physics in several volumes. They say the one who reads all 50 books will become the person who read all these books. <!-- .element: class="bredge" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">RU</h1>
+
+<img src="https://i.imgur.com/zPinBJ5.png" alt="|600" style="width: 600px; object-fit: fill">
+
+Самое дешевое пойло, которое литрами хлещут все настоящие космические волки. Неизвестно из каких отходов варится эта жижа, тем не менее пиво отличается приятным мягким вкусом гудрона и ароматом свежего помета дикобраза.<!-- .element: class="bredge" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">RU</h1>
+
+
+<img src="https://i.imgur.com/6aJvoNV.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">EN</h1>
+
+
+<img src="https://i.imgur.com/xpfRd5S.png" alt="|600" style="width: 600px; object-fit: fill">
+
+В обучении случайно вышла шутка (pun): англоязычный игрок может подумать, что речь о полёте. <!-- .element: class="bredge" -->
+
+Однако, его ждёт сюрприз, когда он нажмёт на кнопку... <!-- .element: class="bredge" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">EN</h1>
+
+<img src="https://i.imgur.com/hdMrwhB.png" alt="|600" style="width: 600px; object-fit: fill">
+
+The cheapest swill, drunk by all space dogs. Nobody knows from what waste this stuff is brewed, nevertheless this beer is distinguished by a pleasant, mild taste of tar and the fragrance of fresh porcupine dung.<!-- .element: class="bredge" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Игра [Carrot Heart](https://store.steampowered.com/app/1352470/Carrot_Heart/)
+
+<br>
+
+<img src="https://cdn.akamai.steamstatic.com/steam/apps/1352470/header.jpg?t=1644098765" alt="|600" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align:center; font-size:60px; color: orange">Что делаю?</h1>
+
+<br>
+
+<style>
+	.bullet {
+		font-size: 16px;
+		padding: 5px;
+	}
+</style>
+
+- С нуля пишу описание игры для Steam на RU > EN. <!-- .element: class="bullet" -->
+
+- Перевожу текст игры (RU > EN) <!-- .element: class="bullet" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align: center; font-size: 60px; color: orange">ОПИСАНИЕ ИГРЫ</h1>
+
+В двух языках (EN & RU)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1352470/extras/HeaderCustom_2.png?t=1644098765" alt="|600" style="width: 600px; object-fit: fill">
+<p style="text-align:left; font-size:20px">Три жизни, одна смерть. Умер — начинай сначала.  </p>  
+<p style="text-align:center; font-size:20px">Предметы и враги в комнатах — другие. Подземелье поменялось…  </p><br>   
+<p style="text-align:center"><b>Успел накопить золото?</b> </p>
+<p style="text-align:center; font-size:20px">Отлично — может, проживёшь следующий забег чуть подольше.</p>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1352470/extras/HeaderCustom_2.png?t=1644098765" alt="|600" style="width: 600px; object-fit: fill">
+<p style="text-align:left; font-size:20px">Three lives, one death. You die — you start over. </p>
+<p style="text-align:left; font-size:20px">Items and enemies are different — the dungeon changed…  </p><br>
+<p style="text-align:center"><b>Saved some gold? </b> </p> 
+<p style="text-align:left; font-size:20px">Great — maybe you’ll live a little longer in the next run. </p>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="text-align:center; font-size:20px">Это Carrot Heart — кооперативный roguelike для 2-х игроков. </p> 
+
+<p style="text-align:center; font-size:30px"><b>И второй игрок здесь — не лишний. </b> </p>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## **ПОЧЕМУ?**
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="text-align:center; font-size:20px">Противники — 18 видов — каждый со своими способностями.  
+У 13 — ещё и по 3 модификации брони.  </p>
+
+<p style="text-align:center; font-size:20px">Один враг — одна тактика боя. 3 врага вместе — 6 тактик одновременно.</p>
+<br>
+Всё ещё хочешь сражаться один?
+
+<br>
+
+<img src="https://cdn.akamai.steamstatic.com/steam/apps/1352470/extras/BlockA.gif?t=1644098765" alt="|600" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="text-align:center; font-size:20px">This is Carrot Heart — a coop roguelike for<br>2 players.</p>
+
+<p style="text-align:left; font-size:30px"><b>And you’ll need the second one.</b></p>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## **Why?**
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<p style="text-align:left; font-size:20px">The enemies — 18 types — each with their own abilities. </p>
+ 
+<p style="text-align:left; font-size:20px">13 of them with 3 armor modifications.  </p>
+  
+<p style="text-align:left; font-size:30px"><b>One enemy — you use one tactic.</b></p>   
+
+<p style="text-align:left; font-size:30px"><b>3 enemies together — 6 tactics simultaneously.  
+Still want to fight alone?</b></p>
+
+<br>
+
+<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1352470/extras/BlockA.gif?t=1644098765" alt="|600" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Полная версия описания по ссылке:
+
+[Carrot Heart on Steam](https://store.steampowered.com/app/1352470/Carrot_Heart/)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Игра [Starless](https://store.steampowered.com/app/1578500/Starless/)
+
+<br>
+
+<img src="https://cdn.akamai.steamstatic.com/steam/apps/1578500/header.jpg?t=1663075065" alt="|600" style="width: 600px; object-fit: fill">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- Перевожу тексты игры
+- С разработчиком, редактирую оригинал
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Maksim Ilinskii Portfolio-1663152245320.png" alt="" style="object-fit: scale-down">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h1 style="text-align:center; font-size:60px; color: orange"> Спасибо за внимание!</h1>
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"convex","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
